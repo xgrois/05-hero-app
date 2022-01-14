@@ -1,0 +1,72 @@
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav mode="push">
+
+        <mat-toolbar>
+            <span>Menu</span>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="./all" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>All Heroes</span>
+            </a>
+            <a routerLink="./add" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Add Hero</span>
+            </a>
+            <a routerLink="./search" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>search</mat-icon>
+                <span>Search Hero</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <!-- 
+    <mat-toolbar>
+        <span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </span>
+        <span class="spacer"></span>
+        <span>
+            <button mat-icon-button>
+                <span>Logout</span>
+                <mat-icon>logout</mat-icon>
+                
+            </button>
+        </span>
+
+    </mat-toolbar>
+    -->
+    <p>
+        <mat-toolbar>
+         <button mat-icon-button
+            class="example-icon" 
+            (click)="sidenav.toggle()"
+            aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Heroes App</span>
+        <span class="spacer"></span>
+
+        <span><small>{{auth.usuario|titlecase}}</small></span>
+        <button mat-icon-button class="example-icon" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+        
+      </mat-toolbar>
+      </p>
+
+
+    <div style="margin: 3em;">
+        <router-outlet></router-outlet>
+    </div>
+    
+
+</mat-sidenav-container>
